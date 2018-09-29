@@ -71,20 +71,20 @@ export const constantRouterMap = [
   {
     path: '/user',
     name: 'User',
-    meta: { title: '讲师', icon: 'user' },
+    meta: { title: '用户', icon: 'user' },
     component: Layout,
     children: [
       {
         path: 'list',
         name: 'listUser',
         component: () => import('@/views/user/list'),
-        meta: { title: '讲师列表', icon: 'chart' }
+        meta: { title: '用户列表', icon: 'chart' }
       },
       {
         path: 'create',
         name: 'createUser',
         component: () => import('@/views/user/create'),
-        meta: { title: '创建讲师', icon: 'documentation' }
+        meta: { title: '创建用户', icon: 'documentation' }
       }
     ]
   },

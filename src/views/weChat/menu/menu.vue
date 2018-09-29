@@ -3,7 +3,7 @@
 		.container.clearfix
 			.aside.l
 				div.title
-					b.nickname Gec集思
+					b.nickname BlockScape
 					span.signal
 					span.signal
 					span.signal
@@ -15,7 +15,7 @@
 							el-button(class='el-icon-circle-plus-outline', v-show="selectedMenuIndex === index", @click="addChildrenMenu")
 			.main
 				.subject
-					.title.clearfix 
+					.title.clearfix
 						span.l {{ titles[selectedMenuIndex] }}
 						a.r 删除菜单
 					el-form(ref='form', :model='Data', label-width='90px')
@@ -49,7 +49,7 @@
 					//子菜单信息
 					el-form(ref='form', :model='Data', label-width='90px', v-show="childrenMenu", v-for="(ele,index) in childrenData", :key="index")
 						.title.childrenMessage.clearfix(v-show="childrenMenu")
-							span.l 子菜单 {{index + 1}} 
+							span.l 子菜单 {{index + 1}}
 							a.r(@click="deleteChildrenMenu(index)") 删除子菜单
 						el-form-item(label='菜单名称')
 							el-input(v-model='ele.name', style="width:300px")
