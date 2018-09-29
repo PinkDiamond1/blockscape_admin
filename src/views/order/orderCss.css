@@ -1,0 +1,17 @@
+.app-container {
+	.input {
+		margin: 0 20px 20px 0;
+	}
+	.botton {
+		margin-left: 20px;
+	}
+	.block {
+		margin: 50px 0 20px;
+		text-align: center;
+	}
+	.timeBox {
+		display: inline-block;
+		margin-left: 20px;
+	}
+}
+   
