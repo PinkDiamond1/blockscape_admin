@@ -107,6 +107,26 @@ export const constantRouterMap = [
         meta: { title: '自定义菜单', icon: 'documentation' }
       }
     ]
+  },
+  {
+    path: '/trade',
+    name: 'trade',
+    meta: { title: '交易详情', icon: 'wechat' },
+    component: Layout,
+    children: [
+      {
+        path: 'Info',
+        name: 'Info',
+        component: () => import('@/views/trade/trade.vue'),
+        meta: { title: '统计数据', icon: 'message' }
+      },
+      {
+        path: 'List',
+        name: 'List',
+        component: () => import('@/views/trade/tradeList.vue'),
+        meta: { title: '交易列表', icon: 'message' }
+      },
+    ]
   }
 ]
 
