@@ -39,7 +39,7 @@ var utils = {
   },
   requestRestful: function(url, data) {
     const Authorization = getToken() ? `Bearer ${getToken()}` : undefined
-    return vue.$http.post(`${constants.AINTEREST_API_ENDPOINT}/api/v1/${url}`, data, {
+    return vue.$http.post(`${constants.AINTEREST_API_ENDPOINT}/${url}`, data, {
       headers: { Authorization }
     }).then(res => {
       return res

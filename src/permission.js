@@ -9,7 +9,6 @@ const whiteList = ['/login'] // 不重定向白名单
 router.beforeEach((to, from, next) => {
 
   NProgress.start()
-  return next();
   if (getToken()) {
     next()
   } else {

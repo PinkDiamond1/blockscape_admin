@@ -30,13 +30,15 @@ const user = {
     Login({ commit }, userInfo) {
       const username = userInfo.username.trim()
       return new Promise((resolve, reject) => {
-        const param = `{
-          adminLogin(username: "${username}", password: "${userInfo.password}") {
-            id,username,phone,wxGecFWHOpenId,wxUsername,profilePicUrl,role,accessToken
-          }
-        }`
-        utils.request(param).then(res => {
-          const data = res.data.data.adminLogin ? res.data.data.adminLogin : {}
+        // const param = `{
+        //   adminLogin(username: "${username}", password: "${userInfo.password}") {
+        //     id,username,phone,wxGecFWHOpenId,wxUsername,profilePicUrl,role,accessToken
+        //   }
+        // }`
+        const url = 'auth/superAdmin';
+        const param = { username, password: userInfo.password };
+        utils.requestRestful(url, param).then(res => {
+          const data = res.data;
           if (data) {
             commit('SET_ROLES', data.role)
             commit('SET_NAME', data.username)
