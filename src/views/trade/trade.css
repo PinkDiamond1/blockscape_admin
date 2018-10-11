@@ -16,5 +16,9 @@ h1 {
 }
 .el-table.listTable {
   width: 80%;
-  height: 600px;
 }
+.inputDays {
+  margin: 20px;
+  display: inline-block;
+}
+

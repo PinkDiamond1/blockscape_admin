@@ -14,6 +14,10 @@ export default {
       selectExchange: '',
       exchanges: [
         {
+          id: 'all',
+          name: '全部',
+        },
+        {
           id: 'huobipro',
           name: '火币',
         },
@@ -23,7 +27,7 @@ export default {
         }
       ],
       selectSide: '',
-      sides: ['buy', 'sell'],
+      sides: ['全部', 'buy', 'sell'],
       totalCount: 20,
       dateRange: [],
     }
@@ -46,14 +50,13 @@ export default {
       this.fetchData();
     },
     fetchData() {
-      console.log(this.dateRange);
       this.listLoading = true;
       const _self = this;
       const filter = {};
-      if (this.selectExchange) {
+      if (this.selectExchange && this.selectExchange !== 'all') {
         filter.exchange = this.selectExchange;
       }
-      if (this.selectSide) {
+      if (this.selectSide && this.selectSide !== '全部') {
         filter.side = this.selectSide;
       }
       if (this.dateRange && this.dateRange.length === 2) {

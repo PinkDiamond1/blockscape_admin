@@ -8,7 +8,7 @@
         el-option(v-for="side in sides", :key="side", :label="side", :value="side")
       el-date-picker(type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" v-model="dateRange")
       el-button.fetch(type='primary' v-on:click="fetchData") 搜索
-    el-table.listTable(:data="list"  border fit highlight-current-row v-loading.body='listLoading', element-loading-text='Loading')
+    el-table.listTable(:data="list"  border fit highlight-current-row v-loading.body='listLoading', element-loading-text='Loading' max-height=600)
       el-table-column(prop="_id", label="_id")
       el-table-column(prop="createdAt", label="创建时间")
       el-table-column(prop="userId", label="用户id")
